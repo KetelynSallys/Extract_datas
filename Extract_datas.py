@@ -35,7 +35,7 @@ def extract_data(text):
     data['Title 1'] = next((other_corporate_cpf_cnpj_pattern.search(line).group(1) for line in lines if other_corporate_cpf_cnpj_pattern.search(line)), 'Not found')
     data['Title 2'] = next((corporate_reason_pattern.search(line).group(0) for line in lines if corporate_reason_pattern.search(line)), 'Not found')
     data['Title 3'] = next((cpf_cnpj_pattern.search(line).group(1) for line in lines if cpf_cnpj_pattern.search(line)), 'Not found')
-    data['Title 4'] = next((source_pattern.search(line).group(1) for line in lines if source_pattern.search(line)), 'Não encontrado')
+    data['Title 4'] = next((source_pattern.search(line).group(1) for line in lines if source_pattern.search(line)), 'Not found')
     data['Title 5'] = next((issue_data_pattern .search(line).group(1) for line in lines if issue_data_pattern .search(line)), 'Not found')
     data['Title 6'] = next((service_code_pattern.search(line).group(1) for line in lines if service_code_pattern.search(line)), 'Not found')
     data['Title 7'] = next(( value_pattern.search(line).group(1) for line in lines if  value_pattern.search(line)), 'Not found')
